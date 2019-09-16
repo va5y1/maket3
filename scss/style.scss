@@ -2,13 +2,239 @@
 @import "fonts";
 
 body {
-	font-size: 16px;
+	font-size: 14px;
 	min-width: 320px;
-	position: relative;
-	line-height: 1.65;
+	line-height: 22px;
 	font-family: 'Roboto', sans-serif;
-	overflow-x: hidden;
-	color: $text;
+	color: #767676;
+	font-family: 'PT SansR', sans-serif;
+	height: 100%;
+}
+#wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	min-height: 100vh;
+	height: 100%;
+}
+
+.conteiner {
+	width: 1000px;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+
+.header {
+	background-color:#dcdcdc;
+	height: 230px;
+}
+.header-wrapper {
+	display: flex;
+	height: 100%;
+	.header-inner2 {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		.tel {
+			text-align: right;
+			&__item {
+				text-align: right;
+				text-decoration: none;
+				font-family: 'Open Sans CL', sans-serif;
+				letter-spacing: 1px;
+				font-size: 40px;
+				line-height: 46px;
+				color: #767676;
+			}
+			.feedback {
+				color: #767676;
+				text-decoration: none;
+				border-bottom: 2px dashed #767676;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 46px;
+			}
+		}
+	}
+	.header-inner1 {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		.logo{
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			&-description {
+				margin-left: 10px;
+				&__title{
+					color: #777;
+					font-size: 24px;
+				}
+				&__subtitle {
+					color: #777777;
+					font-size: 11px;
+				}
+			}
+		}
+	}
+}
+
+.menu {
+	background-color: #777;
+	height: 80px;
+	.nav {
+		height: 100%;
+		ul {
+			height: 100%;
+			list-style: none;
+			display: flex;
+			align-items: center;
+			margin: 0;
+			justify-content: center;
+			padding: 0;
+			li {
+				padding-left: 12px;
+				padding-right: 12px;
+				border-left: 2px solid #fff;
+				font-size: 30px;
+				&:first-child {
+					padding-left: 0;
+					border: none;
+				}
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+			a {
+				color: #ffffff;
+				letter-spacing: 0.75px;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.slider {
+	height: 400px;
+	background-color: #f8f8f8;
+	.slider-item {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		img {
+			width: auto;
+		}
+	}
+}
+
+.content {
+	width: 978px;
+	margin: 30px auto 195px;
+	display: flex;
+	flex-flow: row nowrap;
+	box-sizing: border-box;
+	&-news {
+		h2 {
+			font-size: 40px;
+			font-family: 'PT SansB', sans-serif;
+			margin-top: 0;	
+		}
+		text-align: left;
+		color: #fff;
+		width: 350px;
+		padding: 20px 52px 100px 33px;
+		background-color: #777777;
+		letter-spacing: 0.35px;
+		.italic {
+			font-family: 'PT SansI', sans-serif;
+			font-style: italic;
+			font-weight: 300;
+		}
+		a {
+			display: block;
+			text-align: right;
+			color: #fff;
+		}
+	}
+	&-desc {
+		color: #767676;
+		h2 {
+			color: #767676;
+			font-size: 40px;
+			letter-spacing: 1px;
+			margin: 0;
+			margin-bottom: 30px;
+			line-height: 35px;
+			font-weight: 400;
+		}
+		p {
+			padding-bottom: 10px;
+		}
+		width: 628px;
+		padding: 20px 20px 0 47px;
+	}
+}
+
+.footer {
+	background-color: #777;
+	height: 220px;
+	color: #fff;
+	.footer-wrapper {
+		display: flex;
+		height: 100%;
+		padding-top: 50px;
+		text-align: left;
+		.footer-inner1, .footer-inner2, .footer-inner3 {
+			width: 33%;
+			h2 {
+				min-height: 0;
+			}
+			a {
+				color: #fff;
+			}
+		}
+		.footer-inner1 {
+			&-content {
+				a {
+					text-decoration: none;
+				}
+				p {margin: 0;}
+			}
+		}
+		.footer-inner2 {
+			&-content {
+				ul{
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+				
+			}
+		}
+		.footer-inner3 {
+			&-content {
+				display: flex;
+				justify-content: flex-start;
+				p {
+					padding: 0;
+					margin: 0;
+					margin-left: 9px;
+				}
+				img {
+					margin-top: 5px;
+				}
+			}
+		}
+
+	}
 }
 
  /* in the end*/

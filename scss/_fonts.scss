@@ -15,12 +15,12 @@
 		font-family: $f-name;
 		font-style: $f-style;
 		font-weight: $f-weight;
-		src: url($f-url) format('woff2');
+		src: url($f-url) format('ttf');
 	}
 }
 
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font('PT SansR', normal, 400, '../fonts/PTSans-Regular.ttf');
+@include font('PT SansI', italic, 300, '../fonts/PTSans-RegularItalic.ttf');
+@include font('PT SansB', normal, 700, '../fonts/PTSans-Bold.ttf');
+@include font('Open Sans CL', normal, 400, '../fonts/OpenSansCondensed-Light.ttf');
