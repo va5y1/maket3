@@ -22,6 +22,7 @@ body {
     width: 100%;
    	height: 100%;
     position: absolute;
+    z-index: 50;
     top: 0;
     left: 0;
     display: none;
@@ -53,22 +54,21 @@ body {
 			height: 40px;
 			padding: 5px;
 			&:valid {
-				border: 1px solid green;
+				color: green;
 			}
-			&:invalid {
-				border: 1px solid red;
+			&:focus:invalid {
+				color: red;
+				border: 1px solid #ff8383;
+				box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75);
 			}
 			&::placeholder {
 				color: #fff;
 			}
-			&:focus:required{
-				border: 1px solid #ff8383;
-				box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75);
-				&::placeholder {
+			&:focus:required::placeholder{
 					color: #dc7f7f;
 					font-style: italic;
+					
 				}
-			}
 
 		}
 		h2 {
@@ -209,16 +209,50 @@ body {
 		}
 	}
 }
+@keyframes slider {
+	from {
+		background: url(../img/slide1.png) bottom;
+		background-size: cover;
+	}
+	50% {
+		background: url(../img/slider.png) bottom;
+		background-size: cover;
+		opacity: 0;
+
+	}
+	to {
+		background: url(../img/slide2.png) bottom;
+		background-size: cover;
+	}
+}
+.prev,.next {
+	width: 32px;
+	height: 61px;
+	position: absolute;
+	cursor: pointer;
+}
+.prev {
+	background: url('../img/prev.png');
+	top: 50%;
+	left: 20%;
+}
+.next {
+	background: url('../img/next.png');
+	top: 50%;
+	right: 20%;
+}
 .slider {
+	position: relative;
 	height: 400px;
 	background-color: #f8f8f8;
 	.slider-item {
+
 		margin: 0 auto;
-		display: flex;
-		justify-content: center;
-		img {
-			width: auto;
-		}
+		height: 100%;
+		width: 1248px;
+		background: url(../img/slide1.png) bottom;
+		background-size: cover;
+		animation: slider 4s ease-in infinite alternate forwards;
 	}
 }
 .breadcrumbs {

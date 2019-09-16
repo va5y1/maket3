@@ -43,6 +43,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 50;
   top: 0;
   left: 0;
   display: none; }
@@ -82,9 +83,12 @@ body {
       height: 40px;
       padding: 5px; }
       #feed form input:valid {
-        border: 1px solid green; }
-      #feed form input:invalid {
-        border: 1px solid red; }
+        color: green; }
+      #feed form input:focus:invalid {
+        color: red;
+        border: 1px solid #ff8383;
+        -webkit-box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75);
+                box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75); }
       #feed form input::-webkit-input-placeholder {
         color: #fff; }
       #feed form input::-moz-placeholder {
@@ -95,25 +99,21 @@ body {
         color: #fff; }
       #feed form input::placeholder {
         color: #fff; }
-      #feed form input:focus:required {
-        border: 1px solid #ff8383;
-        -webkit-box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75);
-                box-shadow: inset 0 0 13px rgba(228, 106, 106, 0.75); }
-        #feed form input:focus:required::-webkit-input-placeholder {
-          color: #dc7f7f;
-          font-style: italic; }
-        #feed form input:focus:required::-moz-placeholder {
-          color: #dc7f7f;
-          font-style: italic; }
-        #feed form input:focus:required:-ms-input-placeholder {
-          color: #dc7f7f;
-          font-style: italic; }
-        #feed form input:focus:required::-ms-input-placeholder {
-          color: #dc7f7f;
-          font-style: italic; }
-        #feed form input:focus:required::placeholder {
-          color: #dc7f7f;
-          font-style: italic; }
+      #feed form input:focus:required::-webkit-input-placeholder {
+        color: #dc7f7f;
+        font-style: italic; }
+      #feed form input:focus:required::-moz-placeholder {
+        color: #dc7f7f;
+        font-style: italic; }
+      #feed form input:focus:required:-ms-input-placeholder {
+        color: #dc7f7f;
+        font-style: italic; }
+      #feed form input:focus:required::-ms-input-placeholder {
+        color: #dc7f7f;
+        font-style: italic; }
+      #feed form input:focus:required::placeholder {
+        color: #dc7f7f;
+        font-style: italic; }
     #feed form h2 {
       margin: 0;
       color: #535353;
@@ -270,19 +270,58 @@ body {
         .menu .nav ul a:hover {
           text-decoration: underline; }
 
+@-webkit-keyframes slider {
+  from {
+    background: url(../img/slide1.png) bottom;
+    background-size: cover; }
+  50% {
+    background: url(../img/slider.png) bottom;
+    background-size: cover;
+    opacity: 0; }
+  to {
+    background: url(../img/slide2.png) bottom;
+    background-size: cover; } }
+
+@keyframes slider {
+  from {
+    background: url(../img/slide1.png) bottom;
+    background-size: cover; }
+  50% {
+    background: url(../img/slider.png) bottom;
+    background-size: cover;
+    opacity: 0; }
+  to {
+    background: url(../img/slide2.png) bottom;
+    background-size: cover; } }
+
+.prev, .next {
+  width: 32px;
+  height: 61px;
+  position: absolute;
+  cursor: pointer; }
+
+.prev {
+  background: url("../img/prev.png");
+  top: 50%;
+  left: 20%; }
+
+.next {
+  background: url("../img/next.png");
+  top: 50%;
+  right: 20%; }
+
 .slider {
+  position: relative;
   height: 400px;
   background-color: #f8f8f8; }
   .slider .slider-item {
     margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-    .slider .slider-item img {
-      width: auto; }
+    height: 100%;
+    width: 1248px;
+    background: url(../img/slide1.png) bottom;
+    background-size: cover;
+    -webkit-animation: slider 4s ease-in infinite alternate forwards;
+            animation: slider 4s ease-in infinite alternate forwards; }
 
 .breadcrumbs {
   width: 1000px;
@@ -475,7 +514,7 @@ body {
         margin-top: 5px; }
 
 /* in the end*/
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1248px) {
   .slider {
     display: none; }
     .slider .slider-item {

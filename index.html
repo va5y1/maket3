@@ -51,14 +51,14 @@
 		<a href="#" class="close"><img src="img/close.png" alt="close" width="27" height="27"></a>
 		<form action="">
 			<h2>Обратная связь</h2>
-			Ваше имя *
-			<input type="text" required placeholder="Поле обязательно для заполнения">
-			Телефон *
-			<input type="tel" required placeholder="Поле обязательно для заполнения">
-			Email *
-			<input type="email" required placeholder="Поле обязательно для заполнения">
-			Сообщение
-			<textarea name="" id="" cols="30" rows="8"></textarea>
+			<label for="name">Ваше имя *</label>
+			<input type="text" id="name" required placeholder="Поле обязательно для заполнения">
+			<label for="tel">Телефон *</label>
+			<input type="tel" id="tel" required placeholder="Поле обязательно для заполнения">
+			<label for="email">Email *</label>
+			<input type="email" id="email" required placeholder="Поле обязательно для заполнения">
+			<label for="text">Сообщение</label>
+			<textarea name="" id="text" cols="30" rows="8"></textarea>
 			<button type="submit">Отправить</button>
 		</form>
 		
@@ -88,9 +88,10 @@
 </div>
 
 <section class="slider">
+	<div class="prev"></div>
 	<div class="slider-item">
-		<img src="img/slider.png" alt="slider" width="1400" height="400">
 	</div>
+	<div class="next"></div>
 </section>
 <div class="breadcrumbs">
 	<a href="#">Главная</a> / 
